@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import { Link, NavLink } from "react-router-dom";
 import { SiShopware } from "react-icons/si";
@@ -8,7 +9,12 @@ import { links } from '../data/dummy';
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu } = useStateContext();
+  const { activeMenu, setActiveMenu, screenSize
+  } = useStateContext();
+
+  const handleCloseSideBar = () => {
+    if (activeMenu && screenSize <= 900) setActiveMenu(false)
+  }
 
   const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2';
   const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2';
@@ -20,7 +26,7 @@ const Sidebar = () => {
           <div className='flex justify-between items-center'>
             <Link
               to='/'
-              onClick={() => setActiveMenu(false)}
+              onClick={() => handleCloseSideBar}
               className='items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white to-slate-900 '
             >
               <SiShopware /> <span>Shoppy</span>
@@ -48,10 +54,10 @@ const Sidebar = () => {
                   <NavLink
                     to={`/${link.name}`}
                     key={`/${link.name}`}
-                    onClick={() => { }}
-                    className={({ isActive }) => (
+                    onClick={handleCloseSideBar}
+                    className={({ isActive }) =>
                       isActive ? activeLink : normalLink
-                    )}
+                    }
                   >
                     {link.icon}
                     <span className='capitalize '>
