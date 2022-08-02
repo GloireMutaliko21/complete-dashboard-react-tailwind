@@ -325,9 +325,9 @@ export const colorMappingData = [
     { x: 'Nov', y: 15.5 },
     { x: 'Dec', y: 9.9 },
   ],
-  ['#FFFF99'],
-  ['#FFA500'],
-  ['#FF4040'],
+  ['#75E6DA'],
+  ['#189AB4'],
+  ['#05445E'],
 ];
 
 export const rangeColorMapping = [
@@ -374,6 +374,7 @@ export const FinancialPrimaryXAxis = {
   maximum: new Date('2017, 9, 30'),
   crosshairTooltip: { enable: true },
   majorGridLines: { width: 0 },
+  title: "Years"
 };
 
 export const FinancialPrimaryYAxis = {
