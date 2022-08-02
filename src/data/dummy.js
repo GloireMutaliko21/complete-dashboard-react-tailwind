@@ -3575,7 +3575,7 @@ export const kanbanData = [
 
 export const financialChartData = [
   {
-    x: new Date('2012-04-02'),
+    x: new Date('2017-04-02'),
     open: 85.9757,
     high: 90.6657,
     low: 85.7685,
