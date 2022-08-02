@@ -9,7 +9,7 @@ const Chat = () => {
   const { currentColor, handleClick } = useStateContext();
 
   return (
-    <div className="nav-item absolute right-5 md:right-52 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
+    <div className="nav-item absolute right-5 md:right-52 top-12 bg-gray-100 dark:bg-[#42464D] p-5 rounded-lg w-96">
       <div className="flex justify-between items-center">
         <div className="flex gap-10">
           <p className="font-semibold text-lg dark:text-gray-200">Messages</p>
