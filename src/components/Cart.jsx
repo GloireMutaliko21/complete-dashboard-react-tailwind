@@ -10,7 +10,7 @@ const Cart = () => {
   const { currentColor, handleClick } = useStateContext();
 
   return (
-    <div className="nav-item absolute right-5 md:right-52 top-12 bg-gray-100 dark:bg-[#42464D] p-5 rounded-lg w-96">
+    <div className="nav-item absolute right-5 md:right-64 top-12 bg-gray-100 dark:bg-[#42464D] p-5 rounded-lg w-96">
       <div className="flex justify-between items-center">
         <p className="font-semibold text-lg">Shopping Cart</p>
         <button
@@ -28,7 +28,7 @@ const Cart = () => {
       <div>
 
 
-        {cartData?.map((item, index) => (
+        {cartData.map((item, index) => (
           <div key={index}>
             <div>
               <div className="flex items-center   leading-8 gap-5 border-b-1 border-color dark:border-gray-600 p-4">
