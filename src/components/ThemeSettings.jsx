@@ -11,7 +11,7 @@ const ThemeSettings = () => {
   const { setColor, setMode, currentMode, currentColor, setThemeSettings } = useStateContext();
 
   return (
-    <div className='bg-half-transparent w-screen fixed nav-item top-0 right-0'>
+    <div onClick={() => setThemeSettings(false)} className='pointer-events-auto bg-half-transparent w-screen fixed nav-item top-0 right-0'>
       <div className='float-right h-screen dark:to-gray-200 bg-white dark:[#484B52] w-96'>
         <div className='flex justify-between items-center p-4 ml-4'>
           <p className='font-semibold text-xl'>Settings</p>
