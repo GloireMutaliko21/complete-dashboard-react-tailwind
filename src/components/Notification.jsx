@@ -1,4 +1,5 @@
 import React from 'react';
+import { createPortal } from "react-dom";
 import { MdOutlineCancel } from 'react-icons/md';
 
 import { Button } from '.';
@@ -8,7 +9,7 @@ import { useStateContext } from '../contexts/ContextProvider';
 const Notification = () => {
   const { currentColor, handleClick } = useStateContext();
 
-  return (
+  return createPortal(
     <div className="nav-item absolute right-5 md:right-40 top-12 bg-gray-100 dark:bg-[#42464D] p-8 rounded-lg w-96">
       <div className="flex justify-between items-center">
         <div className="flex gap-3">
@@ -41,7 +42,7 @@ const Notification = () => {
           <Button color="white" bgColor={currentColor} text="See all notifications" borderRadius="10px" width="full" />
         </div>
       </div>
-    </div>
+    </div>, document.body
   );
 };
 

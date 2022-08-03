@@ -1,15 +1,23 @@
 import React from 'react';
+import { motion } from "framer-motion"
+import { createPortal } from "react-dom";
 import { MdOutlineCancel } from 'react-icons/md';
 
 import { Button } from '.';
 import { chatData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
+
 const Chat = () => {
   const { currentColor, handleClick } = useStateContext();
 
-  return (
-    <div className="nav-item absolute right-5 md:right-52 top-12 bg-gray-100 dark:bg-[#42464D] p-5 rounded-lg w-96">
+  return createPortal(
+    <motion.div
+      className="nav-item absolute right-5 md:right-52 top-12 bg-gray-100 dark:bg-[#42464D] p-5 rounded-lg w-96"
+      initial={{ opacity: 0, y: '5%' }}
+      animate={{ opacity: 1, y: '-0.1%' }}
+      transition={{ ease: "easeOut", duration: 0.4 }}
+    >
       <div className="flex justify-between items-center">
         <div className="flex gap-10">
           <p className="font-semibold text-lg dark:text-gray-200">Messages</p>
@@ -60,7 +68,7 @@ const Chat = () => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>, document.body
   );
 };
 
