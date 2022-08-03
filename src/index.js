@@ -1,14 +1,17 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom";
 
 import './index.css'
-import App from './App';
 import { ContextProvider } from "./contexts/ContextProvider";
+import Loading from './components/Loading';
+const App = lazy(() => import('./App'));
 
 ReactDOM.render
     (
         <ContextProvider>
-            <App />
+            <Suspense fallback={<Loading />}>
+                <App/>
+            </Suspense>
         </ContextProvider>,
         document.getElementById('root')
     );
