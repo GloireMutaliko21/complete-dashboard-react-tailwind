@@ -1,5 +1,6 @@
 import React from 'react';
 import { createPortal } from "react-dom";
+import { motion } from "framer-motion"
 import { MdOutlineCancel } from 'react-icons/md';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 
@@ -11,7 +12,12 @@ const Cart = () => {
   const { currentColor, handleClick } = useStateContext();
 
   return createPortal(
-    <div className="nav-item absolute right-5 md:right-64 top-12 bg-gray-100 dark:bg-[#42464D] p-5 rounded-lg w-96">
+    <motion.div
+      className="nav-item absolute right-5 md:right-64 top-12 bg-gray-100 dark:bg-[#42464D] p-5 rounded-lg w-96"
+      initial={{ opacity: 0, y: '5%' }}
+      animate={{ opacity: 1, y: '-0.1%' }}
+      transition={{ ease: "easeOut", duration: 0.4 }}
+    >
       <div className="flex justify-between items-center">
         <p className="font-semibold text-lg">Shopping Cart</p>
         <button
@@ -70,7 +76,7 @@ const Cart = () => {
           width="full"
         />
       </div>
-    </div>, document.body
+    </motion.div>, document.body
   );
 };
 

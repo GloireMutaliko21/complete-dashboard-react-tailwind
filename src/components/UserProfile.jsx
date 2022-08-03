@@ -1,5 +1,6 @@
 import React from 'react';
 import { createPortal } from "react-dom";
+import { motion } from "framer-motion";
 import { MdOutlineCancel } from 'react-icons/md';
 
 import { Button } from '.';
@@ -11,7 +12,12 @@ const UserProfile = () => {
   const { currentColor, handleClick } = useStateContext();
 
   return createPortal(
-    <div className="nav-item absolute right-1 top-16 bg-gray-100 dark:bg-[#42464D] p-8 rounded-lg w-96">
+    <motion.div
+      className="nav-item absolute right-1 top-16 bg-gray-100 dark:bg-[#42464D] p-8 rounded-lg w-96"
+      initial={{ opacity: 0, y: '5%' }}
+      animate={{ opacity: 1, y: '-0.1%' }}
+      transition={{ ease: "easeOut", duration: 0.4 }}
+    >
       <div className="flex justify-between items-center">
         <p className="font-semibold text-lg dark:text-gray-200">User Profile</p>
         <button
@@ -65,7 +71,7 @@ const UserProfile = () => {
           width="full"
         />
       </div>
-    </div>, document.body
+    </motion.div>, document.body
 
   );
 };
