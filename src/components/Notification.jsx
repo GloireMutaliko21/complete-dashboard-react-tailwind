@@ -15,7 +15,6 @@ const Notification = () => {
       className="nav-item absolute right-5 md:right-40 top-12 bg-gray-100 dark:bg-[#42464D] p-8 rounded-lg w-96"
       initial={{ opacity: 0, y: '5%' }}
       animate={{ opacity: 1, y: '-0.1%' }}
-      transition={{ ease: "easeOut", duration: 0.4 }}
     >
       <div className="flex justify-between items-center">
         <div className="flex gap-3">

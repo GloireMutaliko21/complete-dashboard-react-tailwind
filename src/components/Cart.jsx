@@ -16,7 +16,6 @@ const Cart = () => {
       className="nav-item absolute right-5 md:right-64 top-12 bg-gray-100 dark:bg-[#42464D] p-5 rounded-lg w-96"
       initial={{ opacity: 0, y: '5%' }}
       animate={{ opacity: 1, y: '-0.1%' }}
-      transition={{ ease: "easeOut", duration: 0.4 }}
     >
       <div className="flex justify-between items-center">
         <p className="font-semibold text-lg">Shopping Cart</p>
